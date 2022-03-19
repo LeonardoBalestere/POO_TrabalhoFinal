@@ -17,5 +17,6 @@
             <Button mnemonicParsing="false" onAction="#onSairBtnClicked" text="Sair" fx:id="sairBtn" />
         </items>
       </ToolBar>
+      <Label prefHeight="78.0" prefWidth="126.0" text="Label" fx:id="label" />
    </children>
 </VBox>
