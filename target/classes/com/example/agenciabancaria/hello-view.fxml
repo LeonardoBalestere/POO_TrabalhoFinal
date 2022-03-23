@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agenciabancaria.HelloController">
+    <children>
+        <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <items>
+                <Button mnemonicParsing="false" onAction="#onAgenciasBtnClicked" text="Agências" />
+                <Button mnemonicParsing="false" onAction="#onClientesBtnClicked" text="Clientes" />
+                <Button mnemonicParsing="false" onAction="#onContasBtnClicked" text="Contas" />
+                <Button mnemonicParsing="false" onAction="#onOperacoesBtnClicked" text="Operações" />
+                <Button mnemonicParsing="false" onAction="#onEmprestimosBtnClicked" text="Empréstimos" />
+                <Button mnemonicParsing="false" onAction="#onFuncionariosBtnClicked" text="Funcionários" />
+                <Button mnemonicParsing="false" onAction="#onCuponsBtnClicked" text="Cupons" />
+                <Button mnemonicParsing="false" onAction="#onSairBtnClicked" text="Sair" fx:id="sairBtn" />
+            </items>
+        </ToolBar>
+    </children>
+</VBox>
