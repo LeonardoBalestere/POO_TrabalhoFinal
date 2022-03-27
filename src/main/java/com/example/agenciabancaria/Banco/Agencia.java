@@ -8,6 +8,12 @@ public class Agencia {
     private Estado estado;
     private Cidade cidade;
 
+    public Agencia(String nome, Estado estado, Cidade cidade) {
+        this.nome = nome;
+        this.estado = estado;
+        this.cidade = cidade;
+    }
+
     public String getNome() {
         return nome;
     }
