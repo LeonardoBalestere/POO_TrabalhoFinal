@@ -22,7 +22,7 @@ public class Funcionario implements Pessoa {
     private Date dataPromocao;
     private Agencia agencia;
 
-    public Funcionario(String nome, String cpf, Date nascimento, Cidade cidade, Estado estado, int id, List<String> dependentes, Funcionario supervisor, Agencia agencia, TipoCargo tipoCargo) {
+    public Funcionario(String nome, String cpf, Date nascimento, Cidade cidade, Estado estado, int id, List<String> dependentes, Funcionario supervisor, Agencia agencia, TipoCargo tipoCargo, Date admissao) {
         this.nome = nome;
         this.cpf = cpf;
         this.nascimento = nascimento;
@@ -31,7 +31,7 @@ public class Funcionario implements Pessoa {
         this.id = id;
         this.dependentes = dependentes;
         this.supervisor = supervisor;
-        this.dataAdmissao = new Date();
+        this.dataAdmissao = admissao;
         this.agencia = agencia;
         this.tipoCargo = tipoCargo;
         this.dataPromocao = null;
@@ -114,5 +114,10 @@ public class Funcionario implements Pessoa {
     @Override
     public Estado getEstado() {
         return estado;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " (" + id + " / Ag.: " + agencia.getNome() + " / " + getTipoCargo().name() + ")";
     }
 }

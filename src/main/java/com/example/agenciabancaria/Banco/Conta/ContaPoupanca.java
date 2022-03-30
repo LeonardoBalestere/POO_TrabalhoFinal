@@ -21,4 +21,9 @@ public class ContaPoupanca extends Conta{
     public void setTaxaJuros(float taxaJuros) {
         this.taxaJuros = taxaJuros;
     }
+
+    @Override
+    public String toString() {
+        return "[CP] Ag.: " + getAgencia().getNome() + " / ID: " + getId() + " / Tx. juros: " + getTaxaJuros() + " / Saldo: " + getSaldo();
+    }
 }

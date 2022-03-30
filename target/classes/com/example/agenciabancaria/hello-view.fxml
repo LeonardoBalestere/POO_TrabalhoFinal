@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agenciabancaria.HelloController">
-
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agenciabancaria.HelloController">
    <children>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
-        <items>
-            <Button mnemonicParsing="false" onAction="#onAgenciasBtnClicked" text="Agências" />
-            <Button mnemonicParsing="false" onAction="#onClientesBtnClicked" text="Clientes" />
-            <Button mnemonicParsing="false" onAction="#onContasBtnClicked" text="Contas" />
-            <Button mnemonicParsing="false" onAction="#onOperacoesBtnClicked" text="Operações" />
-            <Button mnemonicParsing="false" onAction="#onEmprestimosBtnClicked" text="Empréstimos" />
-            <Button mnemonicParsing="false" onAction="#onFuncionariosBtnClicked" text="Funcionários" />
-            <Button mnemonicParsing="false" onAction="#onCuponsBtnClicked" text="Cupons" />
-            <Button mnemonicParsing="false" onAction="#onSairBtnClicked" text="Sair" fx:id="sairBtn" />
-        </items>
-      </ToolBar>
-      <Label prefHeight="78.0" prefWidth="126.0" text="Label" fx:id="label" />
+      <Pane fx:id="basePane" prefHeight="601.0" prefWidth="800.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="287.0" layoutY="206.0" prefHeight="66.0" prefWidth="227.0" text="Bem vindo!">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+            <ToolBar layoutY="301.0" prefHeight="43.0" prefWidth="800.0" style="-fx-border-width: 0; -fx-region-border: 0; -fx-background-color: transparent;">
+              <items>
+                  <Button mnemonicParsing="false" onAction="#onAgenciasBtnClicked" text="Agências" />
+                  <Button mnemonicParsing="false" onAction="#onClientesBtnClicked" text="Clientes" />
+                  <Button mnemonicParsing="false" onAction="#onContasBtnClicked" text="Contas" />
+                  <Button mnemonicParsing="false" onAction="#onOperacoesBtnClicked" text="Operações" />
+                  <Button mnemonicParsing="false" onAction="#onEmprestimosBtnClicked" text="Empréstimos" />
+                  <Button mnemonicParsing="false" onAction="#onFuncionariosBtnClicked" text="Funcionários" />
+                  <Button mnemonicParsing="false" onAction="#onCuponsBtnClicked" text="Cupons" />
+                  <Button fx:id="sairBtn" mnemonicParsing="false" onAction="#onSairBtnClicked" text="Sair" />
+              </items>
+               <padding>
+                  <Insets bottom="10.0" left="75.0" top="10.0" />
+               </padding>
+            </ToolBar>
+         </children>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Pane>
    </children>
 </VBox>

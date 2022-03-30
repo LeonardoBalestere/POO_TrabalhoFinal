@@ -5,7 +5,7 @@ import com.example.agenciabancaria.Banco.Servicos.Emprestimo;
 import com.example.agenciabancaria.Endereco.Cidade;
 import com.example.agenciabancaria.Endereco.Estado;
 import com.example.agenciabancaria.Enum.TipoCargo;
-
+import com.example.agenciabancaria.Utils;
 import java.util.Date;
 import java.util.List;
 
@@ -111,5 +111,11 @@ public class Cliente implements Pessoa {
     @Override
     public Estado getEstado() {
         return estado;
+    }
+
+    @Override
+    public String toString() {
+        String nascimentoFormatted = Utils.convertDateToString(nascimento);
+        return nome + " (ID: " + getId() + " / CPF: " + cpf + " / Dt. nascimento: " + nascimentoFormatted + ")";
     }
 }

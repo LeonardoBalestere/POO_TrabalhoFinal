@@ -2,6 +2,7 @@ package com.example.agenciabancaria.Banco.Servicos;
 
 import com.example.agenciabancaria.Banco.Agencia;
 import com.example.agenciabancaria.Pessoa.Cliente;
+import com.example.agenciabancaria.Utils;
 
 import java.util.Date;
 import java.util.List;
@@ -75,5 +76,11 @@ public class Emprestimo {
 
     public void setParcelas(int parcelas) {
         this.parcelas = parcelas;
+    }
+
+    @Override
+    public String toString() {
+        String data = Utils.convertDateToString(this.date);
+        return "Ag.: " + getAgencia().getNome() + " / Valor: " + getValor() + " / Juros: " + getJuros() + " / Parcelas: " + getParcelas() + " / Data: " + data;
     }
 }

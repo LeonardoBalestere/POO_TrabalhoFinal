@@ -49,4 +49,9 @@ public class Operacao {
     public Date getDate() {
         return date;
     }
+
+    @Override
+    public String toString() {
+        return "Op.: " +getId() + " / Ag.: " + getContaCorrente().getAgencia().getNome() + " / CC: " + getContaCorrente().getId() + " / Tipo: " + getTipoOperacao().toString() + " / Desc.: " + getDescricao() + " / Valor: " + getValor();
+    }
 }

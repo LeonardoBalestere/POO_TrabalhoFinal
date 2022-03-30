@@ -1,7 +1,7 @@
 package com.example.agenciabancaria.Banco.Servicos;
 
 import com.example.agenciabancaria.Banco.Conta.ContaCorrente;
-
+import com.example.agenciabancaria.Utils;
 import java.util.Date;
 
 public class Cupom {
@@ -41,5 +41,11 @@ public class Cupom {
 
     public Operacao getOperacao() {
         return operacao;
+    }
+
+    @Override
+    public String toString() {
+        String validadeString = Utils.convertDateToString(this.validade);
+        return "ID: " + id + " / Ag.: " + contaCorrente.getAgencia().getNome() + " / CC: " + contaCorrente.getId() + " / Op.: " + operacao.getId() + " / Válido até: " + validadeString;
     }
 }

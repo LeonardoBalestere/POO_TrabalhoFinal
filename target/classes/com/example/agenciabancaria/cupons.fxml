@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agenciabancaria.CuponsController">
+    <children>
+        <Pane fx:id="basePane" prefHeight="600.0" prefWidth="800.0">
+            <children>
+                <ToolBar prefHeight="40.0" prefWidth="800.0">
+                    <items>
+                        <Button fx:id="voltarBtn" mnemonicParsing="false" onAction="#onVoltarClicked" text="&lt; Voltar" />
+                        <Label text="Cupons">
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                    </items>
+                </ToolBar>
+                <Pane layoutY="40.0" prefHeight="563.0" prefWidth="424.0">
+                    <children>
+                        <ListView fx:id="list" prefHeight="563.0" prefWidth="424.0" />
+                    </children></Pane>
+                <Pane layoutX="425.0" layoutY="40.0" prefHeight="563.0" prefWidth="375.0">
+                    <children>
+                        <Label layoutX="14.0" layoutY="52.0" text="Conta corrente" />
+                        <ComboBox fx:id="contaCorrenteComboBox" layoutX="14.0" layoutY="67.0" prefHeight="23.0" prefWidth="341.0" />
+                        <Label layoutX="14.0" layoutY="100.0" text="Operação" />
+                        <ComboBox fx:id="operacaoComboBox" layoutX="14.0" layoutY="115.0" prefHeight="23.0" prefWidth="341.0" />
+                        <Label layoutX="14.0" layoutY="147.0" text="Data de validade" />
+                        <Button layoutX="14.0" layoutY="194.0" mnemonicParsing="false" onAction="#onCreate" text="Salvar" />
+                        <Label layoutX="14.0" layoutY="10.0" text="Novo cupom">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                  <DatePicker fx:id="validadeDatePicker" layoutX="14.0" layoutY="161.0" prefHeight="23.0" prefWidth="341.0" />
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

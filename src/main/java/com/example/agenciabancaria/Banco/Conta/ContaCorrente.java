@@ -34,4 +34,9 @@ public class ContaCorrente extends Conta {
             Cupom cupom = new Cupom(id, new Date(2023,01,01), this, operacao);
         }
     }
+
+    @Override
+    public String toString() {
+        return "[CC] Ag.: " + getAgencia().getNome() + " / ID: " + getId() + " / Tarifa: " + getTarifa() + " / Saldo: " + getSaldo();
+    }
 }
