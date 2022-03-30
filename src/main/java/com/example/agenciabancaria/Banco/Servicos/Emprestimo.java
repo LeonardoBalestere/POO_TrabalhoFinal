@@ -4,6 +4,7 @@ import com.example.agenciabancaria.Banco.Agencia;
 import com.example.agenciabancaria.Pessoa.Cliente;
 
 import java.util.Date;
+import java.util.List;
 
 public class Emprestimo {
     private int id;
@@ -11,16 +12,16 @@ public class Emprestimo {
     private float valor;
     private float juros;
     private Date date;
-    private Cliente cliente;
+    private List<Cliente> clientes;
     private int parcelas;
 
-    public Emprestimo(int id, Agencia agencia, float valor, float juros, Date date, Cliente cliente, int parcelas) {
+    public Emprestimo(int id, Agencia agencia, float valor, float juros, Date date, List<Cliente> clientes, int parcelas) {
         this.id = id;
         this.agencia = agencia;
         this.valor = valor;
         this.juros = juros;
         this.date = date;
-        this.cliente = cliente;
+        this.clientes = clientes;
         this.parcelas = parcelas;
     }
 
@@ -64,12 +65,8 @@ public class Emprestimo {
         this.date = date;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public List<Cliente> getClientes() {
+        return clientes;
     }
 
     public int getParcelas() {

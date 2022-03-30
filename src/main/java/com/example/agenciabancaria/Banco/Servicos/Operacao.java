@@ -13,13 +13,13 @@ public class Operacao {
     private float valor;
     private Date date;
 
-    public Operacao(int id, ContaCorrente contaCorrente, TipoOperacao tipoOperacao, String descricao, float valor, Date date) {
+    public Operacao(int id, ContaCorrente contaCorrente, TipoOperacao tipoOperacao, String descricao, float valor) {
         this.id = id;
         this.contaCorrente = contaCorrente;
         this.tipoOperacao = tipoOperacao;
         this.descricao = descricao;
         this.valor = valor;
-        this.date = date;
+        this.date = new Date();
     }
 
     public int getId() {

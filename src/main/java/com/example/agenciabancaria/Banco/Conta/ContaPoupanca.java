@@ -9,8 +9,8 @@ import java.util.List;
 public class ContaPoupanca extends Conta{
     private float taxaJuros;
 
-    public ContaPoupanca(int id, Agencia agencia, float saldo, Date dataCriacao, Date ultimoAcesso, List<Cliente> clientes, float taxaJuros) {
-        super(id, agencia, saldo, dataCriacao, ultimoAcesso, clientes);
+    public ContaPoupanca(int id, Agencia agencia, float saldo, List<Cliente> clientes, float taxaJuros) {
+        super(id, agencia, saldo, clientes);
         this.taxaJuros = taxaJuros;
     }
 

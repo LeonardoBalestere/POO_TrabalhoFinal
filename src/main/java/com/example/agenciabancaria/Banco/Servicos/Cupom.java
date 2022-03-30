@@ -11,10 +11,10 @@ public class Cupom {
     private ContaCorrente contaCorrente;
     private Operacao operacao;
 
-    public Cupom(int id, Date validade, boolean utilizado, ContaCorrente contaCorrente, Operacao operacao) {
+    public Cupom(int id, Date validade, ContaCorrente contaCorrente, Operacao operacao) {
         this.id = id;
         this.validade = validade;
-        this.utilizado = utilizado;
+        this.utilizado = false;
         this.contaCorrente = contaCorrente;
         this.operacao = operacao;
     }
@@ -31,8 +31,8 @@ public class Cupom {
         return utilizado;
     }
 
-    public void setUtilizado(boolean utilizado) {
-        this.utilizado = utilizado;
+    public void utilizar() {
+        this.utilizado = true;
     }
 
     public ContaCorrente getContaCorrente() {

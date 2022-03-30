@@ -3,24 +3,26 @@ package com.example.agenciabancaria.Pessoa;
 import com.example.agenciabancaria.Banco.Agencia;
 import com.example.agenciabancaria.Endereco.Cidade;
 import com.example.agenciabancaria.Endereco.Estado;
+import com.example.agenciabancaria.Enum.TipoCargo;
 
 import java.util.Date;
 import java.util.List;
 
 public class Funcionario implements Pessoa {
+    private int id;
     private String nome;
     private String cpf;
     private Date nascimento;
     private Cidade cidade;
     private Estado estado;
-    private int id;
+    private TipoCargo tipoCargo;
     private List<String> dependentes;
     private Funcionario supervisor;
     private Date dataAdmissao;
+    private Date dataPromocao;
     private Agencia agencia;
-    private String cargo;
 
-    public Funcionario(String nome, String cpf, Date nascimento, Cidade cidade, Estado estado, int id, List<String> dependentes, Funcionario supervisor, Agencia agencia, String cargo) {
+    public Funcionario(String nome, String cpf, Date nascimento, Cidade cidade, Estado estado, int id, List<String> dependentes, Funcionario supervisor, Agencia agencia, TipoCargo tipoCargo) {
         this.nome = nome;
         this.cpf = cpf;
         this.nascimento = nascimento;
@@ -31,15 +33,12 @@ public class Funcionario implements Pessoa {
         this.supervisor = supervisor;
         this.dataAdmissao = new Date();
         this.agencia = agencia;
-        this.cargo = cargo;
+        this.tipoCargo = tipoCargo;
+        this.dataPromocao = null;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public List<String> getDependentes() {
@@ -74,12 +73,22 @@ public class Funcionario implements Pessoa {
         this.agencia = agencia;
     }
 
-    public String getCargo() {
-        return cargo;
+
+    public TipoCargo getTipoCargo() {
+        return tipoCargo;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void promover(TipoCargo tipoCargo) {
+        if(tipoCargo.ordinal() < this.tipoCargo.ordinal()) {
+            System.out.println("Impossivel ser promovido para um cargo abaixo");
+        } else {
+            this.tipoCargo = tipoCargo;
+            this.dataPromocao = new Date();
+        }
+    }
+
+    public Date getDataPromocao() {
+        return dataPromocao;
     }
 
     @Override

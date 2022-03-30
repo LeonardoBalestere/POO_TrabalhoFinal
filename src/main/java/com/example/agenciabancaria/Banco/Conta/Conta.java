@@ -6,21 +6,23 @@ import com.example.agenciabancaria.Pessoa.Cliente;
 import java.util.Date;
 import java.util.List;
 
-public class Conta {
+public abstract class Conta {
     private int id;
     private Agencia agencia;
     private float saldo;
     private Date dataCriacao;
     private Date ultimoAcesso;
     private List<Cliente> clientes;
+    private boolean cancelado;
 
-    public Conta(int id, Agencia agencia, float saldo, Date dataCriacao, Date ultimoAcesso, List<Cliente> clientes) {
+    public Conta(int id, Agencia agencia, float saldo, List<Cliente> clientes) {
         this.id = id;
         this.agencia = agencia;
         this.saldo = saldo;
-        this.dataCriacao = dataCriacao;
-        this.ultimoAcesso = ultimoAcesso;
+        this.dataCriacao = new Date();
+        this.ultimoAcesso = null;
         this.clientes = clientes;
+        this.cancelado = false;
     }
 
     public int getId() {
@@ -47,11 +49,31 @@ public class Conta {
         return ultimoAcesso;
     }
 
-    public void setUltimoAcesso(Date ultimoAcesso) {
-        this.ultimoAcesso = ultimoAcesso;
+    public void acessar() {
+        this.ultimoAcesso = new Date();
     }
 
     public List<Cliente> getClientes() {
         return clientes;
+    }
+
+    public boolean isCancelado() {
+        return cancelado;
+    }
+
+    public void cancelar() {
+        this.cancelado = true;
+    }
+
+    public void sacar(float quantidade){
+        if (saldo >= quantidade){
+            saldo -= quantidade;
+        } else{
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
+    public void depositar(float quantidade){
+        saldo += quantidade;
     }
 }
